@@ -37,6 +37,11 @@ public class SpettatoreController {
     public List<Spettatore> getSpettatoriMaggiorenni() {
         return spettatoreService.getAllSpettatoriMaggiorenni();
     }
+
+    @GetMapping("/is-spettatore-maggiorenne")
+    public boolean isSpettatoreMaggiorenne(String idspettatore){
+        return spettatoreService.isSpettatoreMaggiorenne(spettatoreService.getSpettatoreById(idspettatore).get());
+    }
     @PostMapping("/insert-spettatore")
     public Spettatore insertSpettatore(@RequestBody SpettatoreInsertRequest request) {
         return spettatoreService.save(request.toSpettatore());
