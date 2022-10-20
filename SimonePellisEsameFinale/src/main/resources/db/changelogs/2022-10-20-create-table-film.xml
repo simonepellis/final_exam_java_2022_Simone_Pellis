@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2022-10-20-create-table-film.xml-001" author="Simo_Pellis">
+        <comment>CREAZIONE TABELLA FILM</comment>
+
+        <createTable tableName="film">
+            <column name="id" type="varchar(36)">
+                <constraints primaryKey="true" primaryKeyName="pk_film"/>
+            </column>
+            <column name="titolo" type="varchar(50)"/>
+            <column name="autore" type="varchar(100)"/>
+            <column name="produttore" type="varchar(100)"/>
+            <column name="genere" type="varchar(100)"/>
+            <column name="eta_minima" type="BIGINT"/>
+
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="sala" baseColumnNames="id_film" constraintName="FK_SALA_FILM"
+                                 referencedTableName="film" referencedColumnNames="id"/>
+
+        <rollback>
+            <dropTable tableName="film"/>
+        </rollback>
+
+    </changeSet>
+</databaseChangeLog>

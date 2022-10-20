@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2022-10-20-create-table-sala.xml-001" author="Simo_Pellis">
+        <comment>CREAZIONE TABELLA SALA</comment>
+
+        <createTable tableName="sala">
+            <column name="id" type="varchar(36)">
+                <constraints primaryKey="true" primaryKeyName="pk_sala"/>
+            </column>
+            <column name="capacita_sala" type="BIGINT"/>
+            <column name="id_film" type="varchar(36)"/>
+
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="sala"/>
+        </rollback>
+
+    </changeSet>
+</databaseChangeLog>

@@ -9,7 +9,7 @@
 
         <createTable tableName="biglietto">
             <column name="id" type="varchar(36)">
-                <constraints primaryKey="true" primaryKeyName="pk_spettatore"/>
+                <constraints primaryKey="true" primaryKeyName="pk_biglietto"/>
             </column>
             <column name="numero_posto" type="BIGINT"/>
             <column name="prezzo" type="BIGINT"/>
