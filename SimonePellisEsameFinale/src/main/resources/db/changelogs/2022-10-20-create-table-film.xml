@@ -19,12 +19,12 @@
 
         </createTable>
 
-        <addForeignKeyConstraint baseTableName="sala" baseColumnNames="id_film" constraintName="FK_SALA_FILM"
-                                 referencedTableName="film" referencedColumnNames="id"/>
+       <addForeignKeyConstraint baseTableName="sala" baseColumnNames="id_film" constraintName="FK_SALA_FILM"
+                                referencedTableName="film" referencedColumnNames="id"/>
 
-        <rollback>
-            <dropTable tableName="film"/>
-        </rollback>
+       <rollback>
+           <dropTable tableName="film"/>
+       </rollback>
 
-    </changeSet>
+   </changeSet>
 </databaseChangeLog>

@@ -16,11 +16,11 @@
         </createTable>
 
         <addForeignKeyConstraint baseTableName="spettatore" baseColumnNames="id_biglietto" constraintName="FK_SPETTATORE_BIGLIETTO"
-                                 referencedTableName="biglietto" referencedColumnNames="id"/>
+                                referencedTableName="biglietto" referencedColumnNames="id"/>
 
-        <rollback>
-            <dropTable tableName="biglietto"/>
-        </rollback>
+       <rollback>
+           <dropTable tableName="biglietto"/>
+       </rollback>
 
-    </changeSet>
+   </changeSet>
 </databaseChangeLog>
