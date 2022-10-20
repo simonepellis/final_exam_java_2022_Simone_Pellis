@@ -2,6 +2,7 @@ package final_exam.SimonePellisEsameFinale.data.dto;
 
 import final_exam.SimonePellisEsameFinale.data.archetype.Dto;
 import final_exam.SimonePellisEsameFinale.data.archetype.Model;
+import final_exam.SimonePellisEsameFinale.data.model.SalaCinematografica;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,9 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class SalaCinematograficaDTO implements Dto {
-    String id;
+
+    private String id;
+
+    private int maxCapacita;
+
+    private FilmDTO filmDTO;
     @Override
-    public Model toModel() {
+    public SalaCinematografica toModel() {
         return null;
     }
 }

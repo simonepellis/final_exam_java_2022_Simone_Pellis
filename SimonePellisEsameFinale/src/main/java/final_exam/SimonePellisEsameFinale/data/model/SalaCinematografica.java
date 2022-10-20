@@ -1,14 +1,13 @@
 package final_exam.SimonePellisEsameFinale.data.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import final_exam.SimonePellisEsameFinale.data.archetype.Dto;
 import final_exam.SimonePellisEsameFinale.data.archetype.Model;
+import final_exam.SimonePellisEsameFinale.data.dto.SalaCinematograficaDTO;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @Getter
@@ -24,8 +23,16 @@ public class SalaCinematografica implements Model {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
+    @Column(name = "capacita_sala")
+    private int maxCapacita;
+
+    @ManyToOne
+    @JoinColumn(name = "id_film")
+    @JsonBackReference(value = "film")
+    private Film filmInProiezione;
+
     @Override
-    public Dto toDto() {
-        return null;
+    public SalaCinematograficaDTO toDto() {
+        return SalaCinematograficaDTO.builder().id(id).maxCapacita(maxCapacita).filmDTO(filmInProiezione.toDto()).build();
     }
 }
