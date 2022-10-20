@@ -53,4 +53,9 @@ public class SpettatoreServiceImpl implements SpettatoreService {
         }
         return etaSpettatoreIntero;
     }
+
+    @Override
+    public Spettatore save(Spettatore spettatore) {
+        return spettatoreRepository.save(spettatore);
+    }
 }

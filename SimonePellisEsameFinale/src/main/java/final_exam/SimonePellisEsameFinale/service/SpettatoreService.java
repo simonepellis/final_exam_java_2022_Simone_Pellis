@@ -13,4 +13,6 @@ public interface SpettatoreService {
     public Boolean isSpettatoreMaggiorenne(String idSpettatore);
 
     public int getEtaSpettatore(String idSpettatore);
+
+    public Spettatore save(Spettatore spettatore);
 }
