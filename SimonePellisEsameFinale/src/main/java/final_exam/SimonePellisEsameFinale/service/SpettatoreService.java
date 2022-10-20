@@ -10,9 +10,11 @@ public interface SpettatoreService {
 
     public Optional<Spettatore> getSpettatoreById(String idSpettatore);
 
-    public Boolean isSpettatoreMaggiorenne(String idSpettatore);
+    public Boolean isSpettatoreMaggiorenne(Spettatore spettatore);
 
-    public int getEtaSpettatore(String idSpettatore);
+    public long getEtaSpettatoreById(String idSpettatore);
 
     public Spettatore save(Spettatore spettatore);
+
+    public List<Spettatore> getAllSpettatoriMaggiorenni();
 }

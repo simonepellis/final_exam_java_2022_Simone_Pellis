@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -32,9 +33,9 @@ public class SpettatoreServiceImpl implements SpettatoreService {
     }
 
     @Override
-    public Boolean isSpettatoreMaggiorenne(String idSpettatore) {
-        if (getSpettatoreById(idSpettatore).isPresent()) {
-            Spettatore spettatore = getSpettatoreById(idSpettatore).get();
+    public Boolean isSpettatoreMaggiorenne(Spettatore spettatore) {
+        if (getSpettatoreById(spettatore.getId()).isPresent()) {
+            Spettatore spettatoreInCarico = getSpettatoreById(spettatore.getId()).get();
             long etaSpettatore = ChronoUnit.YEARS.between(Instant.now(), spettatore.getDataNascita());
             if (etaSpettatore >= 18L) {
                 return true;
@@ -44,18 +45,30 @@ public class SpettatoreServiceImpl implements SpettatoreService {
     }
 
     @Override
-    public int getEtaSpettatore(String idSpettatore) {
-        int etaSpettatoreIntero = 0;
+    public long getEtaSpettatoreById(String idSpettatore) {
         if (getSpettatoreById(idSpettatore).isPresent()) {
             Spettatore spettatore = getSpettatoreById(idSpettatore).get();
             long etaSpettatore = ChronoUnit.YEARS.between(Instant.now(), spettatore.getDataNascita());
-            return etaSpettatoreIntero = (int) etaSpettatore;
+            return etaSpettatore;
         }
-        return etaSpettatoreIntero;
+        return 0L;
     }
 
     @Override
     public Spettatore save(Spettatore spettatore) {
         return spettatoreRepository.save(spettatore);
+    }
+
+    @Override
+    public List<Spettatore> getAllSpettatoriMaggiorenni() {
+        List<Spettatore> spettatoriMaggiorenni = new ArrayList<>();
+        List<Spettatore> spettatoreList = spettatoreRepository.findAll();
+        for (Spettatore spettatore : spettatoreList) {
+            if (isSpettatoreMaggiorenne(spettatore)) {
+                spettatoriMaggiorenni.add(spettatore);
+            }
+        }
+
+        return spettatoriMaggiorenni;
     }
 }

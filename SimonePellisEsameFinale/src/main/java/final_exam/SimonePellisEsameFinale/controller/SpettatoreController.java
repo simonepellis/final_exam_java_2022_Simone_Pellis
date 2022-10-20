@@ -29,10 +29,14 @@ public class SpettatoreController {
     }
 
     @GetMapping("/get-eta")
-    public int getEtaSpettatore(String idSpettatore) {
-        return spettatoreService.getEtaSpettatore(idSpettatore);
+    public long getEtaSpettatore(String idSpettatore) {
+        return spettatoreService.getEtaSpettatoreById(idSpettatore);
     }
 
+    @GetMapping("/get-spettatori-maggiorenni")
+    public List<Spettatore> getSpettatoriMaggiorenni() {
+        return spettatoreService.getAllSpettatoriMaggiorenni();
+    }
     @PostMapping("/insert-spettatore")
     public Spettatore insertSpettatore(@RequestBody SpettatoreInsertRequest request) {
         return spettatoreService.save(request.toSpettatore());
