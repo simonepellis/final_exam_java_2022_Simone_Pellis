@@ -8,6 +8,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.Date;
 
 @Setter
@@ -31,7 +32,7 @@ public class Spettatore implements Model {
     private String cognome;
 
     @Column(name = "data_nascita")
-    private Date dataNascita;
+    private Instant dataNascita;
 
     @OneToOne
     @JoinColumn(name = "id_biglietto")

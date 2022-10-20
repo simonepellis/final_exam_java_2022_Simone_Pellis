@@ -29,7 +29,7 @@ public class SalaCinematograficaServiceImpl implements SalaCinematograficaServic
         return salaCinematograficaRepository.findById(idSala);
     }
 
-    @Override
+    /*@Override
     public int calcoloIncassoSala(SalaCinematografica sala) {
         int incasso = 0;
         List<Spettatore> spettatoriPresenti = sala.getPersoneInSala();
@@ -37,5 +37,5 @@ public class SalaCinematograficaServiceImpl implements SalaCinematograficaServic
             incasso = incasso + spettatore.getBiglietto().getPrezzo();
         }
         return incasso;
-    }
+    }*/
 }

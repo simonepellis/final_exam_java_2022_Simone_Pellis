@@ -34,13 +34,14 @@ public class SalaCinematografica implements Model {
     @JsonBackReference(value = "film")
     private Film filmInProiezione;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "sala")
+    /*@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "sala")
     @JsonManagedReference(value = "spettatore")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<Spettatore> personeInSala;
+    private List<Spettatore> personeInSala;*/
 
     @Override
     public SalaCinematograficaDTO toDto() {
-        return SalaCinematograficaDTO.builder().id(id).maxCapacita(maxCapacita).filmDTOInProiezione(filmInProiezione.toDto()).personeInSala(personeInSala).build();
+        return SalaCinematograficaDTO.builder().id(id).maxCapacita(maxCapacita).
+                filmDTOInProiezione(filmInProiezione.toDto()).build();
     }
 }

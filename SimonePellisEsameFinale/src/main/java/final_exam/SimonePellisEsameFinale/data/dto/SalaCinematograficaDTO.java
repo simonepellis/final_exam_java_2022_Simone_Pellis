@@ -26,6 +26,6 @@ public class SalaCinematograficaDTO implements Dto {
     private List<Spettatore> personeInSala;
     @Override
     public SalaCinematografica toModel() {
-        return SalaCinematografica.builder().id(id).maxCapacita(maxCapacita).filmInProiezione(filmDTOInProiezione.toModel()).personeInSala(personeInSala).build();
+        return SalaCinematografica.builder().id(id).maxCapacita(maxCapacita).filmInProiezione(filmDTOInProiezione.toModel()).build();
     }
 }

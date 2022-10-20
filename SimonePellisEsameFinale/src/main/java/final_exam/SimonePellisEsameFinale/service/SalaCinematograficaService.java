@@ -11,6 +11,6 @@ public interface SalaCinematograficaService {
 
     public Optional<SalaCinematografica> getSalaById(String idSala);
 
-    public int calcoloIncassoSala(SalaCinematografica sala);
+   // public int calcoloIncassoSala(SalaCinematografica sala);
 
 }

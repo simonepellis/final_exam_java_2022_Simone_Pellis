@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.util.Date;
 
 @Data
@@ -19,7 +20,7 @@ public class SpettatoreDTO implements Dto {
     private String id;
     private String nome;
     private String cognome;
-    private Date dataNascita;
+    private Instant dataNascita;
     private BigliettoDTO bigliettoDTO;
 
     @Override
