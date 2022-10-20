@@ -5,5 +5,7 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
+    <include file="db/changelogs/2022-10-20-create-table-biglietto.xml"/>
+    <include file="db/changelogs/2022-10-20-create-table-spettatore.xml"/>
 
 </databaseChangeLog>
