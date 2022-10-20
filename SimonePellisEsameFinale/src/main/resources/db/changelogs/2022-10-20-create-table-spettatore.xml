@@ -17,6 +17,9 @@
             <column name="id_biglietto" type="varchar(36)"/>
         </createTable>
 
+        <addForeignKeyConstraint baseTableName="sala" baseColumnNames="id_spettatore" constraintName="FK_SALA_SPETTATORE"
+                                 referencedTableName="spettatore" referencedColumnNames="id"/>
+
         <rollback>
             <dropTable tableName="spettatore"/>
         </rollback>

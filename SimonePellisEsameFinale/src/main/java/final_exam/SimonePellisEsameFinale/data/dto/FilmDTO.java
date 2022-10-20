@@ -1,8 +1,7 @@
 package final_exam.SimonePellisEsameFinale.data.dto;
 
 import final_exam.SimonePellisEsameFinale.data.archetype.Dto;
-import final_exam.SimonePellisEsameFinale.data.archetype.Model;
-import final_exam.SimonePellisEsameFinale.data.enums.Generi;
+import final_exam.SimonePellisEsameFinale.enums.Generi;
 import final_exam.SimonePellisEsameFinale.data.model.Film;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

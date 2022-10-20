@@ -1,4 +1,4 @@
-package final_exam.SimonePellisEsameFinale.data.enums;
+package final_exam.SimonePellisEsameFinale.enums;
 
 public enum Generi {
 

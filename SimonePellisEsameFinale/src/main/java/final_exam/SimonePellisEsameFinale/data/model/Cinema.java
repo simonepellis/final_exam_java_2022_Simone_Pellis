@@ -25,10 +25,10 @@ public class Cinema implements Model {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cinema")
+    /*@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "cinema")
     @JsonManagedReference(value = "sala")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<SalaCinematografica> saleCinematografiche;
+    private List<SalaCinematografica> saleCinematografiche;*/
 
     @Override
     public CinemaDTO toDto() {

@@ -17,7 +17,7 @@ import java.util.List;
 public class CinemaDTO implements Dto {
     private String id;
 
-    private List<SalaCinematografica> saleCinematografiche;
+   //private List<SalaCinematografica> saleCinematografiche;
 
     @Override
     public Cinema toModel() {

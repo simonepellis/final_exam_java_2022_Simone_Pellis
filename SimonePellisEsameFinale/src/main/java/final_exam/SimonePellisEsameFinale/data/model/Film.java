@@ -1,9 +1,8 @@
 package final_exam.SimonePellisEsameFinale.data.model;
 
-import final_exam.SimonePellisEsameFinale.data.archetype.Dto;
 import final_exam.SimonePellisEsameFinale.data.archetype.Model;
 import final_exam.SimonePellisEsameFinale.data.dto.FilmDTO;
-import final_exam.SimonePellisEsameFinale.data.enums.Generi;
+import final_exam.SimonePellisEsameFinale.enums.Generi;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 

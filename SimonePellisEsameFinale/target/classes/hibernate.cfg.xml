@@ -7,5 +7,11 @@
         <property name="connection.password">password</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
+        <mapping class="final_exam.SimonePellisEsameFinale.data.model.Biglietto"/>
+        <mapping class="final_exam.SimonePellisEsameFinale.data.model.Cinema"/>
+        <mapping class="final_exam.SimonePellisEsameFinale.data.model.Film"/>
+        <mapping class="final_exam.SimonePellisEsameFinale.data.model.SalaCinematografica"/>
+        <mapping class="final_exam.SimonePellisEsameFinale.data.model.Spettatore"/>
+
     </session-factory>
 </hibernate-configuration>
